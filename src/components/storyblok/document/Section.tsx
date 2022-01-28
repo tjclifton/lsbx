@@ -45,14 +45,17 @@ export const DocumentSection: React.FC<DocumentSectionProps> = props => {
   }, [element, props.scrollIntoView]);
 
   /**
-   *
+   * Need to handle a dynamically set fraction for sections that are large
+   * enough where the default fraction for the reveal (20%) is greater than
+   * the screen size, making it so `fraction` of the section never comes into
+   * the viewport. We need to adjust for this! The Lord told me He would give
+   * this to me for His Name's sake. Help O Jehovah!!
    */
   const onTopVisible = useCallback(() => {
     if (!element) return;
 
     const { height } = element.getBoundingClientRect();
 
-    console.log(`${props.blok._uid}: height=${height}, window=${window.innerHeight}, fraction=${Math.min(window.innerHeight / height * 0.5, 0.2)}`);
     setRevealFraction(Math.min(window.innerHeight / height * 0.75, 0.2));
   }, [props.blok, props.onActive, element]);
 
