@@ -1,0 +1,42 @@
+env:
+  browser: true
+  es2021: true
+  node: true
+extends:
+  - 'eslint:recommended'
+  - 'plugin:react/recommended'
+  - 'plugin:@typescript-eslint/recommended'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 12
+  sourceType: module
+plugins:
+  - react
+  - '@typescript-eslint'
+rules:
+  react/prop-types:
+    - 0
+  quotes:
+    - 1
+    - single
+    - avoidEscape: true
+  member-access:
+    - 0
+  member-ordering:
+    - 0
+  interface-name:
+    - 0
+  arrow-parens: 0
+  object-literal-sort-keys: 0
+  semi:
+    - 1
+    - always
+  curly:
+    - 1
+    - multi-line
+  jsx-quotes:
+    - 1
+    - prefer-double
+

@@ -1,0 +1,728 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "HoeflerText-Italic";
+  font-style: italic;
+  font-weight: 400;
+  src: url("https://fonts.animaapp.com/HoeflerText-Italic") format("truetype");
+}
+@font-face {
+  font-family: "HoeflerText-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.animaapp.com/HoeflerText-Regular") format("truetype");
+}
+@font-face {
+  font-family: "Charter-Roman";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.animaapp.com/Charter-Roman") format("truetype");
+}
+@font-face {
+  font-family: "Captureit-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.animaapp.com/Captureit-Regular") format("truetype");
+}
+@font-face {
+  font-family: "SBLHebrew-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.animaapp.com/SBLHebrew-Regular") format("truetype");
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.full-width-a {
+  width: 100%;
+}
+
+.full-height-a {
+  height: 100%;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000000;
+  --black-haze: #f7f7f7;
+  --metallic-sunburst: #9a763c;
+  --mongoose: #c4aa7f;
+  --shadow: #806e51;
+  --silver-chalice: #acacac;
+  --storm-dust: #676363;
+  --well-read: #b53232;
+  --white: #ffffff;
+
+  --font-size-l2: 16px;
+  --font-size-m2: 14px;
+  --font-size-xl2: 18px;
+  --font-size-xxl: 71px;
+  --font-size-xxxl: 224px;
+  --font-size-xxxl2: 32px;
+
+  --font-family-captureit-regular: "Captureit-Regular", Helvetica;
+  --font-family-charter: "Charter", Helvetica;
+  --font-family-charter-italic: "Charter-Italic", Helvetica;
+  --font-family-charter-roman: "Charter-Roman", Helvetica;
+  --font-family-hoeflertext-italic: "HoeflerText-Italic", Helvetica;
+  --font-family-hoeflertext-regular: "HoeflerText-Regular", Helvetica;
+  --font-family-sblhebrew-regular: "SBLHebrew-Regular", Helvetica;
+}
+.hoeflertext-regular-normal-shadow-18px {
+  color: var(--shadow);
+  font-family: var(--font-family-hoeflertext-regular);
+  font-size: var(--font-size-xl2);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.hoeflertext-regular {
+  font-family: var(--font-family-hoeflertext-regular) !important;
+}
+
+.hoeflertext-regular-normal-well-read-14px {
+  color: var(--well-read);
+  font-family: var(--font-family-hoeflertext-regular);
+  font-size: var(--font-size-m2);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.hoeflertext-regular-normal-storm-dust-16px {
+  color: var(--storm-dust) !important;
+  font-family: var(--font-family-hoeflertext-regular) !important;
+  // font-size: var(--font-size-l2) !important;
+  font-style: normal !important;
+  // font-weight: 400 !important;
+}
+
+.hoeflertext-regular-normal-metallic-sunburst-32px {
+  color: var(--metallic-sunburst) !important;
+  font-family: var(--font-family-hoeflertext-regular) !important;
+  font-size: var(--font-size-xxxl2) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+.charter-italic-normal-mongoose-18px {
+  color: var(--mongoose);
+  font-family: var(--font-family-charter-italic);
+  font-size: var(--font-size-xl2);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.charter-roman-normal-metallic-sunburst-32px {
+  color: var(--metallic-sunburst);
+  font-family: var(--font-family-charter-roman);
+  font-size: var(--font-size-xxxl2);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.sblhebrew-regular-normal-storm-dust-224px {
+  color: var(--storm-dust);
+  font-family: var(--font-family-sblhebrew-regular);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.charter-normal-metallic-sunburst-32px {
+  color: var(--metallic-sunburst);
+  font-family: var(--font-family-charter);
+  font-size: var(--font-size-xxxl2);
+}
+
+.charter-italic-normal-metallic-sunburst-32px {
+  color: var(--metallic-sunburst);
+  font-family: var(--font-family-charter-italic);
+  font-size: var(--font-size-xxxl2);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.charter-roman-normal-silver-chalice-18px {
+  color: var(--silver-chalice);
+  font-family: var(--font-family-charter-roman);
+  font-size: var(--font-size-xl2);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.captureit-regular-normal-well-read-71px {
+  color: var(--well-read);
+  font-family: var(--font-family-captureit-regular);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.hoeflertext-italic-normal-silver-chalice-14px {
+  color: var(--silver-chalice);
+  font-family: var(--font-family-hoeflertext-italic);
+  font-size: var(--font-size-m2);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.landing-page-desktop {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.landing-page-desktop .main-header {
+  align-items: center;
+  background-image: url(https://anima-uploads.s3.amazonaws.com/projects/61bd46e322a5e9aef7486f8e/releases/61f09d9dd35eb05c45d3a7fc/img/backgroundimage@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 800px;
+  width: 100%;
+  padding: 46px 76px;
+}
+
+.landing-page-desktop .logo {
+  align-self: flex-end;
+  height: 199px;
+  opacity: 0;
+  transform: translate(0, 25px);
+  width: 30%;
+}
+
+.landing-page-desktop .logo.bp1-animate-enter3 {
+  animation: bp1-animate-enter3-frames 1.00s ease 0.00s 1 normal forwards;
+  opacity: 0;
+  transform: translate(0, 25px);
+}
+
+@keyframes bp1-animate-enter3-frames {
+  from{opacity: 0;
+transform: translate(0, 25px);
+}
+to{opacity: 1;
+transform: translate(0,0);
+}
+}
+
+.landing-page-desktop .overlap-group {
+  position: relative;
+}
+
+.landing-page-desktop .x0-b070-e27-a3-fd-433 {
+  height: 199px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 220px;
+}
+
+.landing-page-desktop .exposed {
+  left: 92px;
+  letter-spacing: 0;
+  line-height: 71px;
+  position: absolute;
+  top: 125px;
+  white-space: nowrap;
+}
+
+.landing-page-desktop .content-4 {
+  align-items: flex-end;
+  display: flex;
+  height: 231px;
+  margin-bottom: 201.0px;
+  margin-left: 2px;
+}
+
+.landing-page-desktop .text-container {
+  position: relative;
+}
+
+.landing-page-desktop .text-1 {
+  direction: rtl;
+  letter-spacing: 0;
+  line-height: 87px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.landing-page-desktop .text-2 {
+  direction: rtl;
+  letter-spacing: 0;
+  line-height: 87px;
+  opacity: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.landing-page-desktop .text-2.bp1-animate-enter4 {
+  animation: bp1-animate-enter4-frames 1.00s ease-in 1.00s 1 normal forwards;
+  opacity: 0;
+}
+
+@keyframes bp1-animate-enter4-frames {
+  from{opacity: 0;
+}
+to{opacity: 1;
+}
+}
+
+.landing-page-desktop .overlap-group2 {
+  padding: 20px 80px 100px 80px;
+  position: relative;
+  width: 100%;
+}
+
+.landing-page-desktop .flourish {
+  background-image: url(https://anima-uploads.s3.amazonaws.com/projects/61bd46e322a5e9aef7486f8e/releases/61f198c9a49dd5a60df3cd94/img/flourish@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 599px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 640px;
+  z-index: 0;
+}
+
+.landing-page-desktop .sections {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page-desktop .section {
+  opacity: 0;
+  position: relative;
+  transform: translate(0, 25px);
+}
+
+.landing-page-desktop .section.bp1-animate-enter2 {
+  animation: bp1-animate-enter2-frames 1.00s ease 1.00s 1 normal forwards;
+  opacity: 0;
+  transform: translate(0, 25px);
+}
+
+@keyframes bp1-animate-enter2-frames {
+  from{opacity: 0;
+transform: translate(0, 25px);
+}
+to{opacity: 1;
+transform: translate(0,0);
+}
+}
+
+.landing-page-desktop .content-5 {
+  align-items: flex-end;
+  display: flex;
+}
+
+.landing-page-desktop .content {
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.landing-page-desktop .heading-container {
+
+}
+
+.landing-page-desktop .subheading {
+  align-items: flex-end;
+  display: flex;
+}
+
+.landing-page-desktop .content-1 {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+.landing-page-desktop .heading {
+  display: flex;
+}
+
+.landing-page-desktop .content-6 {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: -5.5px;
+  margin-right: -2px;
+  margin-top: 3.5px;
+  white-space: nowrap;
+  width: 699px;
+}
+
+.landing-page-desktop .section-1 {
+  margin-top: 50px;
+  opacity: 0;
+  position: relative;
+  transform: translate(25px, 0);
+}
+
+.landing-page-desktop .section-1.bp1-animate-enter1 {
+  animation: bp1-animate-enter1-frames 1.00s ease 1.00s 1 normal forwards;
+  opacity: 0;
+  transform: translate(25px, 0);
+}
+
+@keyframes bp1-animate-enter1-frames {
+  from{opacity: 0;
+transform: translate(25px, 0);
+}
+to{opacity: 1;
+transform: translate(0,0);
+}
+}
+
+.landing-page-desktop .content-7 {
+  align-items: flex-end;
+  display: flex;
+}
+
+.landing-page-desktop .heading-container-1 {
+}
+
+.landing-page-desktop .heading-1 {
+  display: flex;
+}
+
+.landing-page-desktop .content-8 {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: -5.5px;
+  margin-right: -2px;
+  margin-top: 3.5px;
+  white-space: nowrap;
+}
+
+.landing-page-desktop .section-2 {
+  margin-top: 50px;
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.landing-page-desktop .section-2.bp1-animate-enter {
+  animation: bp1-animate-enter-frames 1.00s ease 1.00s 1 normal forwards;
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+@keyframes bp1-animate-enter-frames {
+  from{opacity: 0;
+transform: scale(1.1);
+}
+to{opacity: 1;
+transform: scale(1);
+}
+}
+
+.landing-page-desktop .content-9 {
+  align-items: flex-end;
+  display: flex;
+}
+
+.landing-page-desktop .content-10 {
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.landing-page-desktop .video-1 {
+  background-color: var(--black);
+  height: 312px;
+  width: 554px;
+}
+
+.landing-page-desktop .title {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page-desktop .heading-2 {
+  display: flex;
+  margin-left: 3px;
+}
+
+.landing-page-desktop .the-standard-of-bibl {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+}
+
+.landing-page-desktop .subheading-1 {
+  align-items: flex-end;
+  display: flex;
+}
+
+.landing-page-desktop .sticky-menu {
+  display: flex;
+  height: 459px;
+  width: 270px;
+}
+
+.landing-page-desktop .track {
+  margin-bottom: 0;
+  margin-left: -0.5px;
+  margin-top: 27.3px;
+  object-fit: cover;
+  width: 1px;
+}
+
+.landing-page-desktop .menu-items {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.landing-page-desktop .menu-item-1 {
+  display: flex;
+}
+
+.landing-page-desktop .highlight {
+  margin-left: -2px;
+  object-fit: cover;
+}
+
+.landing-page-desktop .content-2 {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 14px;
+  margin-right: -2px;
+  margin-top: -5px;
+  white-space: nowrap;
+}
+
+.landing-page-desktop .menu-item {
+  align-items: flex-end;
+  display: flex;
+  height: 47px;
+  margin-top: 24px;
+}
+
+.landing-page-desktop .highlight-1 {
+  margin-bottom: 19px;
+  margin-left: -2px;
+  object-fit: cover;
+}
+
+.landing-page-desktop .content-3 {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: -14.7px;
+  margin-left: 14px;
+  margin-right: -2px;
+}
+
+.landing-page-desktop .menu-item-2 {
+  align-items: flex-end;
+  display: flex;
+  margin-top: 24px;
+}
+
+.landing-page-desktop .highlight-2 {
+  margin-bottom: 43px;
+  margin-left: -2px;
+  object-fit: cover;
+}
+
+.landing-page-desktop .content-11 {
+  flex: 1;
+  height: 68px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: -22.7px;
+  margin-left: 14px;
+  margin-right: -2px;
+  width: 255px;
+}
+
+.landing-page-desktop .menu-item-3 {
+  display: flex;
+  height: 28px;
+  margin-top: 24px;
+  width: 271px;
+}
+
+.landing-page-desktop .footer {
+  align-items: flex-start;
+  background-color: var(--black-haze);
+  display: flex;
+  height: 227px;
+  margin-top: 66px;
+  padding: 17px 74px;
+}
+
+.landing-page-desktop .affiliated-websites {
+  display: flex;
+  flex-direction: column;
+  height: 124px;
+  justify-content: space-between;
+  width: 211px;
+}
+
+.landing-page-desktop .heading-3 {
+  display: flex;
+  height: 22px;
+  width: 148px;
+}
+
+.landing-page-desktop .content-12 {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 3px;
+  margin-right: -2px;
+  margin-top: -5px;
+  text-align: center;
+  white-space: nowrap;
+  width: 148px;
+}
+
+.landing-page-desktop .the-church-of-wells {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 7px;
+  margin-right: -2px;
+  margin-top: -9px;
+  white-space: nowrap;
+  width: 126px;
+}
+
+.landing-page-desktop .link-1 {
+  display: flex;
+  height: 14px;
+  margin-top: 4px;
+  width: 82px;
+}
+
+.landing-page-desktop .folly-in-israel {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 7px;
+  margin-right: -2px;
+  margin-top: -9px;
+  white-space: nowrap;
+  width: 82px;
+}
+
+.landing-page-desktop .link-2 {
+  display: flex;
+  height: 14px;
+  margin-top: 4px;
+  width: 213px;
+}
+
+.landing-page-desktop .confessions-of-faith-in-jesus-christ {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 7px;
+  margin-right: -2px;
+  margin-top: -9px;
+  white-space: nowrap;
+  width: 213px;
+}
+
+.landing-page-desktop .link-3 {
+  display: flex;
+  height: 14px;
+  margin-top: 4px;
+  width: 139px;
+}
+
+.landing-page-desktop .years-of-ancient-times {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 7px;
+  margin-right: -2px;
+  margin-top: -9px;
+  white-space: nowrap;
+  width: 139px;
+}
+
+.landing-page-desktop .link-4 {
+  display: flex;
+  height: 14px;
+  margin-top: 4px;
+  width: 183px;
+}
+
+.landing-page-desktop .the-revelation-of-jesus-christ {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 7px;
+  margin-right: -2px;
+  margin-top: -9px;
+  white-space: nowrap;
+  width: 183px;
+}
+
+.landing-page-desktop .copyright {
+  align-self: flex-end;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 16px;
+  margin-left: 253px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.landing-page-desktop .heading-4 {
+  display: flex;
+  height: 22px;
+  margin-left: 353px;
+  width: 88px;
+}
+
+.landing-page-desktop .content-13 {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 3px;
+  margin-right: -2px;
+  margin-top: -5px;
+  text-align: center;
+  white-space: nowrap;
+  width: 88px;
+}
+
+.landing-page-desktop footer {
+  background: var(--black-haze);
+  padding: 3rem 80px;
+  width: 100%;
+}

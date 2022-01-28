@@ -1,0 +1,157 @@
+$light-font-color: #DEDEDE
+$dark-font-color: #47473b
+$red: #e42a2a
+
+// * :global(a)
+//   color: $red !important
+//   transition: color 0.5s
+
+//   &:hover
+//     color: lighten($red, 10%) !important
+//     transition: color 0.5s
+
+.banner
+  width: 40%
+
+  > div
+    position: relative
+    text-align: center
+
+    > div
+      display: inline-block
+      position: relative
+
+.container
+  color: $light-font-color
+  font-family: kinesis-pro-3, serif
+  font-size: 14pt
+  line-height: 2
+
+  &.lessPaddedContainer
+    padding: 0
+
+    \:global(.ui.very.padded.segment)
+      padding: 1em
+
+
+  h1, h2, h3, h4, h5, h6, :global(.ui.header), :global(.ui.list > .item .header)
+    color: $light-font-color
+    font-family: mrs-eaves-roman-small-caps
+    font-weight: normal
+    text-shadow: 0px 3px 3px #0d0a33
+
+  \:global(.ui.segment)
+    color: $dark-font-color
+    border-radius: 2px
+
+    h1, h2, h3, h4, h5, h6, :global(.ui.header)
+      color: $dark-font-color
+      text-shadow: none
+
+.wrapper > div
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  width: 100%
+
+.hidden
+  display: none !important
+
+.header
+  background-size: cover
+  background-position: center bottom
+  text-align: center;
+  height: 100vh
+  margin-bottom: 4rem
+  padding: 2rem
+  position: relative
+
+  > :global(.ui.grid)
+    background: linear-gradient(to bottom, black, transparent)
+    margin: -2rem !important
+
+  &::after
+    background: linear-gradient(to bottom, transparent, #010103)
+    bottom: 0
+    content: ""
+    left: 0
+    position: absolute
+    width: 100%
+    height: 3rem
+
+.logo
+  > img
+    display: block
+    width: 100%
+
+.bannerTextWrapper
+  display: flex
+  justify-content: center
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+  > div
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.75) 75%, rgba(0,0,0,0) 100%)
+    color: white
+    padding: 2rem
+    text-align: center
+    width: 100%
+    display: flex
+    justify-content: center
+
+    h1,h2,h3,h4,h5
+      color: white
+      text-shadow: 0px 1px 2px rgba(0,0,0,1) !important
+
+.siteTitle
+  color: #dddaaa !important
+  margin: 0em !important;
+  text-shadow: 0px 3px 3px #0d0a33
+
+.content
+  padding-top: 2rem
+
+.nav
+  padding: 2rem 0rem
+
+  > :global(.ui.menu)
+    background: none
+    border: none
+    box-shadow: none
+    font-family: mrs-eaves-roman-small-caps
+    font-size: 1.15em
+    font-variant: small-caps
+    justify-content: center
+    transition: opacity 0.5s
+
+    > :global(.item)
+      opacity: 0.75
+      transition: opacity 0.5s, text-shadow 0.5s !important
+
+      &:hover
+        opacity: 1
+        text-shadow: 0px 0px 3px rgb(255, 255, 255)
+        transition: opacity 0.5s, text-shadow 0.5s !important
+
+        a
+          text-shadow: 0px 0px 1px lighten($light-font-color, 20%)
+
+      a
+        color: $light-font-color
+        text-shadow: 0px 0px 2px rgba(0,0,0,0.75)
+
+.menuButton
+  position: absolute
+  top: 2rem
+  right: 2rem
+  z-index: 10
+
+.footer
+  background: rgba(0,0,0,0.25)
+  font-family: sans-serif;
+  font-size: 0.75em
+  margin-top: 4em
+  padding: 2em
