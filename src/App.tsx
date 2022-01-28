@@ -134,13 +134,11 @@ const Content: React.FC<ContentProps> = props => {
                   <List.Item as="a" href="https://hymnsofthelastdays.com">Hymns of the Last Days</List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column tablet={4} computer={4} verticalAlign="bottom" textAlign="center">
-                Copyright &copy; 2022 The Church of Wells
-              </Grid.Column>
-              <Grid.Column tablet={6} computer={6}>
+              <Grid.Column mobile={16} tablet={6} computer={6}>
 
               </Grid.Column>
             </Grid>
+            <p className={styles.copyright}>Copyright &copy; 2022 The Church of Wells</p>
           </footer>
         </div>
       </div>
