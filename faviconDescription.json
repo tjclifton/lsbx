@@ -1,23 +1,25 @@
+
 {
-	"masterPicture": "./public/favicon-original.png",
+	"masterPicture": "./src/images/favicon.png",
 	"iconsPath": "/",
 	"design": {
 		"ios": {
-			"pictureAspect": "noChange",
+			"pictureAspect": "backgroundAndMargin",
+			"backgroundColor": "#1e1f21",
+			"margin": "14%",
 			"assets": {
 				"ios6AndPriorIcons": false,
 				"ios7AndLaterIcons": false,
 				"precomposedIcons": false,
 				"declareOnlyDefaultIcon": true
-			},
-			"appName": "Passion Conferences Exposed"
+			}
 		},
 		"desktopBrowser": {
 			"design": "raw"
 		},
 		"windows": {
 			"pictureAspect": "noChange",
-			"backgroundColor": "#000000",
+			"backgroundColor": "#1e1f21",
 			"onConflict": "override",
 			"assets": {
 				"windows80Ie10Tile": false,
@@ -27,14 +29,14 @@
 					"big": false,
 					"rectangle": false
 				}
-			},
-			"appName": "Passion Conferences Exposed"
+			}
 		},
 		"androidChrome": {
-			"pictureAspect": "noChange",
-			"themeColor": "#ffffff",
+			"pictureAspect": "backgroundAndMargin",
+			"margin": "25%",
+			"backgroundColor": "#1e1f21",
+			"themeColor": "#1e1f21",
 			"manifest": {
-				"name": "Passion Conferences Exposed",
 				"display": "standalone",
 				"orientation": "notSet",
 				"onConflict": "override",
@@ -46,8 +48,7 @@
 			}
 		},
 		"safariPinnedTab": {
-			"pictureAspect": "blackAndWhite",
-			"threshold": 52.34375,
+			"pictureAspect": "silhouette",
 			"themeColor": "#5bbad5"
 		}
 	},
