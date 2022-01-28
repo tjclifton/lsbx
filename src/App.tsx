@@ -121,7 +121,10 @@ const Content: React.FC<ContentProps> = props => {
               <DynamicComponent blok={data.content} />
             </Suspense>
           </div>
-          <footer>
+          <footer style={{
+            paddingLeft: limitPadding ? '2rem' : undefined,
+            paddingRight: limitPadding ? '2rem' : undefined
+          }}>
             <Grid>
               <Grid.Column mobile={16} tablet={6} computer={6}>
                 <Header size="small" className="hoeflertext-regular-normal-storm-dust-16px">Affiliated Websites</Header>
