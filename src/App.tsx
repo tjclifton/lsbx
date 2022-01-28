@@ -60,6 +60,10 @@ const Content: React.FC<ContentProps> = props => {
     only: 'xs'
   }, true, false);
 
+  const logoWidth = useResponsiveValue({
+    above: 'sm'
+  }, '20%', '200px');
+
   console.log(limitPadding);
 
   return <StoryRouter
@@ -94,16 +98,16 @@ const Content: React.FC<ContentProps> = props => {
               size="huge"
               onClick={() => setSidebarVisible(true)}
             />
-            <div className="logo bp1-animate-enter3">
+            <div className="logo bp1-animate-enter3" style={{width: logoWidth}}>
               <img src={logoUrl} />
             </div>
-            <div className={styles.banner}>
-              <div className="sblhebrew-regular-normal-storm-dust-224px">
-                <Fade delay={500} duration={1000} when={scrolled}>
-                  <div className="bp1-animate-enter4" style={{color: 'var(--well-read)'}}>יְהֹוָה</div>
-                </Fade>
-                <div style={{top: '-23px'}}>יהוה</div>
-              </div>
+            <div className={styles.banner} style={{
+              width: limitPadding ? '100%' : undefined
+            }}>
+              <Fade delay={500} duration={1000} when={scrolled}>
+                <div className="bp1-animate-enter4" style={{color: 'var(--well-read)'}}>יְהֹוָה</div>
+              </Fade>
+              <div style={{top: '-23px'}}>יהוה</div>
             </div>
           </div>
           <div className="overlap-group2" style={{

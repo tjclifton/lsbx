@@ -199,6 +199,7 @@
 
 .landing-page-desktop .main-header {
   align-items: center;
+  justify-content: center;
   background-image: url(../images/header-image.webp);
   background-position: 50% 50%;
   background-size: cover;
@@ -206,13 +207,19 @@
   height: 100vh;
   width: 100%;
   padding: 46px 76px;
+  position: relative;
 }
 
 .landing-page-desktop .logo {
   position: absolute;
-  align-self: flex-end;
+  bottom: 2rem;
+  left: 2rem;
   opacity: 0;
   width: 200px
+}
+
+.landing-page-desktop .logo img {
+  width: 100%;
 }
 
 .landing-page-desktop .logo.bp1-animate-enter3 {
