@@ -199,21 +199,20 @@
 
 .landing-page-desktop .main-header {
   align-items: center;
-  background-image: url(https://anima-uploads.s3.amazonaws.com/projects/61bd46e322a5e9aef7486f8e/releases/61f09d9dd35eb05c45d3a7fc/img/backgroundimage@1x.png);
+  background-image: url(../images/header-image.webp);
   background-position: 50% 50%;
   background-size: cover;
   display: flex;
-  height: 800px;
+  height: 100vh;
   width: 100%;
   padding: 46px 76px;
 }
 
 .landing-page-desktop .logo {
+  position: absolute;
   align-self: flex-end;
-  height: 199px;
   opacity: 0;
-  transform: translate(0, 25px);
-  width: 30%;
+  width: 200px
 }
 
 .landing-page-desktop .logo.bp1-animate-enter3 {
@@ -236,12 +235,8 @@ transform: translate(0,0);
 }
 
 .landing-page-desktop .x0-b070-e27-a3-fd-433 {
-  height: 199px;
-  left: 0;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 220px;
+  width: 100%;
 }
 
 .landing-page-desktop .exposed {

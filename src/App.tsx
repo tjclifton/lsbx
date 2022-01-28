@@ -4,7 +4,7 @@ import Burden from './components/storyblok/Burden';
 import { Video } from './components/storyblok/Video';
 import { Document } from './components/storyblok/Document';
 
-import { ComponentLookupContext, StoryRouter, MobileLayout, NavigationItem, ParagraphBlok, useStoryblokNavigationTree, DynamicComponent, SidebarContext } from '@tjclifton/storyblok-react-utils';
+import { ComponentLookupContext, StoryRouter, MobileLayout, NavigationItem, ParagraphBlok, useStoryblokNavigationTree, DynamicComponent, SidebarContext, useResponsiveValue } from '@tjclifton/storyblok-react-utils';
 import { Button, Grid, Header, List, SemanticVERTICALALIGNMENTS } from 'semantic-ui-react';
 import { StoryData } from 'storyblok-js-client';
 import Fade from 'react-reveal/Fade';
@@ -18,6 +18,8 @@ import '@styles/LandingPage.scss';
 import styles from '@styles/App.module.sass';
 import { DocumentSection } from './components/storyblok/document/Section';
 import { Blockquote } from './components/storyblok/Blockquote';
+
+import logoUrl from '@images/logo.svg';
 
 /**
  *
@@ -54,6 +56,12 @@ const Content: React.FC<ContentProps> = props => {
     if (content?.full_slug !== 'contact') window.FB?.CustomerChat?.hide();
   }, []);
 
+  const limitPadding = useResponsiveValue({
+    only: 'xs'
+  }, true, false);
+
+  console.log(limitPadding);
+
   return <StoryRouter
     storyType="page"
     contentFields={{
@@ -74,7 +82,10 @@ const Content: React.FC<ContentProps> = props => {
     {data =>
       <div className="container-center-horizontal hoeflertext-regular-normal-storm-dust-16px">
         <div className="landing-page-desktop screen">
-          <div className="main-header">
+          <div className="main-header" style={{
+            paddingLeft: limitPadding ? '2rem' : undefined,
+            paddingRight: limitPadding ? '2rem' : undefined
+          }}>
             <Button
               className={styles.menuButton}
               inverted
@@ -84,13 +95,7 @@ const Content: React.FC<ContentProps> = props => {
               onClick={() => setSidebarVisible(true)}
             />
             <div className="logo bp1-animate-enter3">
-              <div className="overlap-group">
-                <img
-                  className="x0-b070-e27-a3-fd-433"
-                  src="https://anima-uploads.s3.amazonaws.com/projects/61bd46e322a5e9aef7486f8e/releases/61efb0d4dd0b21a3ff5d44ca/img/0b070e27-a3fd-433b-b241-10713092c809@1x.png"
-                />
-                <div className="exposed captureit-regular-normal-well-read-71px">EXPOSED</div>
-              </div>
+              <img src={logoUrl} />
             </div>
             <div className={styles.banner}>
               <div className="sblhebrew-regular-normal-storm-dust-224px">
@@ -101,7 +106,10 @@ const Content: React.FC<ContentProps> = props => {
               </div>
             </div>
           </div>
-          <div className="overlap-group2">
+          <div className="overlap-group2" style={{
+            paddingLeft: limitPadding ? '2rem' : undefined,
+            paddingRight: limitPadding ? '2rem' : undefined
+          }}>
             <div className="flourish"></div>
             <Suspense fallback={null}>
               <DynamicComponent blok={data.content} />
