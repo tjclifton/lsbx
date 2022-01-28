@@ -61,6 +61,11 @@ export const DocumentSection: React.FC<DocumentSectionProps> = props => {
 
     const { height } = element.getBoundingClientRect();
 
+    // Use 75% of whatever fraction we calculate so that we don't have to have
+    // almost all of the viewport blank before the component shows up. The Lord
+    // helped me with this, all glory to God. May God rebuke proud computer
+    // programmers who say, "Our hand is high, and the Lord hath not done all
+    // this." (Deut. 32:27)
     setRevealFraction(Math.min(window.innerHeight / height * 0.75, 0.2));
   }, [props.blok, props.onActive, element]);
 
