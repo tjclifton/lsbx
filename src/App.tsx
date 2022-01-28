@@ -19,7 +19,7 @@ import styles from '@styles/App.module.sass';
 import { DocumentSection } from './components/storyblok/document/Section';
 import { Blockquote } from './components/storyblok/Blockquote';
 
-import logoUrl from '@images/logo.svg';
+import logoUrl from '@images/logo.png';
 
 /**
  *
