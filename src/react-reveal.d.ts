@@ -121,6 +121,11 @@ interface RevealProps {
    * @property {boolean}
    */
   when?: boolean;
+
+  /**
+   * Fraction of the revealed element height that must be visible in order for reveal animation to trigger. Should be some value between 0 to 1. Defaults to 0.2 meaning that at least 20% of the element height must be visible before the reveal. For elements taller than a viewport, height is limited to the height of a viewport. Optional.
+   */
+   fraction?: number;
 }
 
 declare module 'react-reveal/Bounce' {

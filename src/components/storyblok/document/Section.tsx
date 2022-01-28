@@ -1,5 +1,5 @@
 import { DynamicComponent, RichText } from '@tjclifton/storyblok-react-utils';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Header, Visibility } from 'semantic-ui-react';
 import { Richtext, StoryblokComponent } from 'storyblok-js-client';
 import Reveal from 'react-reveal/Reveal';
@@ -32,6 +32,7 @@ export interface DocumentSectionProps {
  */
 export const DocumentSection: React.FC<DocumentSectionProps> = props => {
   const [ element, setElement ] = useState<HTMLDivElement | null>(null);
+  const [ revealFraction, setRevealFraction ] = useState(0.2);
 
   useEffect(() => {
     if (!props.scrollIntoView || !element) return;
@@ -43,17 +44,31 @@ export const DocumentSection: React.FC<DocumentSectionProps> = props => {
     });
   }, [element, props.scrollIntoView]);
 
+  /**
+   *
+   */
+  const onTopVisible = useCallback(() => {
+    if (!element) return;
+
+    const { height } = element.getBoundingClientRect();
+
+    console.log(`${props.blok._uid}: height=${height}, window=${window.innerHeight}, fraction=${Math.min(window.innerHeight / height * 0.5, 0.2)}`);
+    setRevealFraction(Math.min(window.innerHeight / height * 0.75, 0.2));
+  }, [props.blok, props.onActive, element]);
+
   return <SbEditable content={props.blok}>
     <Reveal
       innerRef={setElement}
       effect={`animate__${props.blok.animation}`}
       duration={1000}
       force={!props.blok.animation}
+      fraction={revealFraction}
     >
       <div className={styles.wrapper}>
         <Visibility
           id={props.blok._uid}
           once={false}
+          onTopVisible={onTopVisible}
           onTopPassed={() => props.onActive?.(props.blok)}
           onBottomPassedReverse={() => props.onActive?.(props.blok)}
         >
