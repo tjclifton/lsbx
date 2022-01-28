@@ -4,7 +4,7 @@ import Burden from './components/storyblok/Burden';
 import { Video } from './components/storyblok/Video';
 import { Document } from './components/storyblok/Document';
 
-import { ComponentLookupContext, StoryRouter, MobileLayout, NavigationItem, ParagraphBlok, useStoryblokNavigationTree, DynamicComponent, SidebarContext, useResponsiveValue } from '@tjclifton/storyblok-react-utils';
+import { ComponentLookupContext, StoryRouter, MobileLayout, NavigationItem, ParagraphBlok, useStoryblokNavigationTree, DynamicComponent, SidebarContext, useResponsiveValue, ResponsiveContext } from '@tjclifton/storyblok-react-utils';
 import { Button, Grid, Header, List, SemanticVERTICALALIGNMENTS } from 'semantic-ui-react';
 import { StoryData } from 'storyblok-js-client';
 import Fade from 'react-reveal/Fade';
@@ -98,14 +98,16 @@ const Content: React.FC<ContentProps> = props => {
               size="huge"
               onClick={() => setSidebarVisible(true)}
             />
-            <div className="logo bp1-animate-enter3" style={{width: logoWidth}}>
-              <img src={logoUrl} />
-            </div>
+            <Fade bottom>
+              <div className="logo" style={{width: logoWidth}}>
+                <img src={logoUrl} />
+              </div>
+            </Fade>
             <div className={styles.banner} style={{
               width: limitPadding ? '100%' : undefined
             }}>
               <Fade delay={500} duration={1000} when={scrolled}>
-                <div className="bp1-animate-enter4" style={{color: 'var(--well-read)'}}>יְהֹוָה</div>
+                <div className="bp1-animate-enter4">יְהֹוָה</div>
               </Fade>
               <div style={{top: '-23px'}}>יהוה</div>
             </div>
@@ -163,7 +165,15 @@ export const App: React.FC = props => {
       DocumentSection,
       Blockquote
     }}>
-      <Content navItems={links || []} />
+      <ResponsiveContext.Provider value={{
+        xs: 0,
+        sm: 768,
+        md: 992,
+        lg: 1200,
+        xl: 1920
+      }}>
+        <Content navItems={links || []} />
+      </ResponsiveContext.Provider>
     </ComponentLookupContext.Provider>
   </MobileLayout>;
 };

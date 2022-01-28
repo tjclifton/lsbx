@@ -1,4 +1,4 @@
-import { RichText, useResponsiveValue } from '@tjclifton/storyblok-react-utils';
+import { ResponsiveContext, RichText, useResponsiveValue } from '@tjclifton/storyblok-react-utils';
 import React, { ReactNode, useCallback, useRef, useState } from 'react';
 import { Grid, Menu, Ref, Sticky } from 'semantic-ui-react';
 import { StoryblokComponent } from 'storyblok-js-client';
@@ -30,8 +30,10 @@ export const Document: React.FC<DocumentProps> = props => {
   const [ selectedSection, setSelectedSection ] = useState<DocumentSectionComponent>();
 
   const sticky = useResponsiveValue({
-    above: 'md'
+    above: 'sm'
   }, true, false);
+
+  console.log(`sticky: ${sticky}`);
 
   const context = useRef<HTMLElement>(null);
 
