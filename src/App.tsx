@@ -64,8 +64,6 @@ const Content: React.FC<ContentProps> = props => {
     above: 'sm'
   }, '20%', '200px');
 
-  console.log(limitPadding);
-
   return <StoryRouter
     storyType="page"
     contentFields={{

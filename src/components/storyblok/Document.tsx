@@ -33,8 +33,6 @@ export const Document: React.FC<DocumentProps> = props => {
     above: 'sm'
   }, true, false);
 
-  console.log(`sticky: ${sticky}`);
-
   const context = useRef<HTMLElement>(null);
 
   /**

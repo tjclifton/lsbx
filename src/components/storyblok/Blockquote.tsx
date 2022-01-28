@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, RichText } from '@tjclifton/storyblok-react-utils';
 import { Richtext, StoryblokComponent } from 'storyblok-js-client';
 
+import styles from '@styles/components/storyblok/Blockquote.module.sass';
+
 /**
  *
  */
@@ -23,12 +25,12 @@ export interface BlockquoteProps {
  * @returns
  */
 export const Blockquote: React.FC<BlockquoteProps> = props =>
-  <figure>
+  <figure className={styles.wrapper}>
     <blockquote>
       <RichText text={props.blok.text} />
     </blockquote>
     <br />
     <figcaption>
-      &mdash;&nbsp;&nbsp;<div style={{display: 'inline-block'}}><RichText text={props.blok.source} /></div>
+      &mdash; <RichText text={props.blok.source} />
     </figcaption>
   </figure>;
