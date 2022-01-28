@@ -50,6 +50,11 @@ export const DocumentSection: React.FC<DocumentSectionProps> = props => {
    * the screen size, making it so `fraction` of the section never comes into
    * the viewport. We need to adjust for this! The Lord told me He would give
    * this to me for His Name's sake. Help O Jehovah!!
+   *
+   * I feel bad that I don't write more comments/prayers in my code Lord. I am
+   * sorry for being carnal... I repent. I desire to write down meditations and
+   * prayers I have while I code. I desire my code to be adorned with the
+   * sweetness of the Name of God, not my own carnal name. O FORBID THIS LORD!
    */
   const onTopVisible = useCallback(() => {
     if (!element) return;
