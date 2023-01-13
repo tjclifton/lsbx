@@ -127,7 +127,7 @@ const Content: React.FC<ContentProps> = props => {
               <Grid.Column mobile={16} tablet={6} computer={6}>
                 <Header size="small" className="hoeflertext-regular-normal-storm-dust-16px">Affiliated Websites</Header>
                 <List link>
-                  <List.Item as="a" href="http://thechurchofwells.com">The Church of Wells</List.Item>
+                  <List.Item as="a" href="http://youmustbebbornagain.org">You Must Be Born Again</List.Item>
                   <List.Item as="a" href="https://follyinisrael.com">Folly in Israel</List.Item>
                   <List.Item as="a" href="https://confessionsoffaithinjesuschrist.com">Confessions of Faith in Jesus Christ</List.Item>
                   <List.Item as="a" href="https://therevelationofjesuschrist.org">The Revelation of Jesus Christ</List.Item>
