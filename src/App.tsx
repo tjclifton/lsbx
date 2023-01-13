@@ -139,7 +139,7 @@ const Content: React.FC<ContentProps> = props => {
 
               </Grid.Column>
             </Grid>
-            <p className={styles.copyright}>Copyright &copy; 2022 The Church of Wells</p>
+            <p className={styles.copyright}>Copyright &copy; 2023 You Must Be Born Again.</p>
           </footer>
         </div>
       </div>
